@@ -1,0 +1,116 @@
+{
+    "miejsca" : [
+        {
+            "id": 1,
+            "nazwa": "Hotel Ramor"
+        },
+        {
+            "id": 2,
+            "nazwa": "Hotel Twins"
+        },
+        {
+            "id": 3,
+            "nazwa": "Teatr"
+        },
+        {
+            "id": 4,
+            "nazwa": "Regate"
+        },
+        {
+            "id": 5,
+            "nazwa": "Mały Teart"
+        },
+        {
+            "id": 6,
+            "nazwa": "Klatka - Biuro"
+        }
+    ], 
+
+    "ludzie" : [
+        {
+            "id": 1,
+            "imie": "Piotr",
+            "nazwisko": "Cz"
+        },
+        {
+            "id": 2,
+            "imie": "Ania",
+            "nazwisko": "Cz"
+        },
+        {
+            "id": 3,
+            "imie": "Aneta",
+            "nazwisko": ""
+        },
+        {
+            "id": 4,
+            "imie": "Joys",
+            "nazwisko": ""
+        },
+        {
+            "id": 5,
+            "imie": "Dominik",
+            "nazwisko": ""
+        },
+        {
+            "id": 6,
+            "imie": "Gabriela",
+            "nazwisko": ""
+        },
+        {
+            "id": 7,
+            "imie": "Paweł",
+            "nazwisko": ""
+        },
+        {
+            "id": 8,
+            "imie": "Ania",
+            "nazwisko": "N"
+        },
+        {
+            "id": 9,
+            "imie": "Sylwia",
+            "nazwisko": ""
+        },
+        {
+            "id": 10,
+            "imie": "Martyna",
+            "nazwisko": ""
+        },
+        {
+            "id": 11,
+            "imie": "Renata",
+            "nazwisko": ""
+        },
+        {
+            "id": 12,
+            "imie": "Ewa",
+            "nazwisko": ""
+        },
+        {
+            "id": 13,
+            "imie": "Gosia",
+            "nazwisko": ""
+        },
+        {
+            "id": 14,
+            "imie": "Ola",
+            "nazwisko": ""
+        },
+        {
+            "id": 15,
+            "imie": "Maria",
+            "nazwisko": ""
+        },
+        {
+            "id": 16,
+            "imie": "Iwona",
+            "nazwisko": ""
+        },
+        {
+            "id": 17,
+            "imie": "Simon",
+            "nazwisko": ""
+        }
+    ]
+}
