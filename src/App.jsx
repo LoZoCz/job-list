@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faXmark } from '@fortawesome/free-solid-svg-icons'
 import Data from "./json/data.json"
 import { useEffect, useState } from 'react'
+import dayjs from 'dayjs'
 
 function App () {
   const { ludzie, miejsca } = Data;
@@ -26,19 +27,24 @@ function App () {
     id: '',
     place: '',
     person: '',
-    date: ''
+    date: '',
+    quantity: ''
   });
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
     // Pobierz dane z formularza
-    const { place, person, date } = formData;
+    const { place, person, date, quantity } = formData;
 
-    if (!place || !person || !date) {
+    if (!place || !person || !date || !quantity) {
     // Handle form validation error here
-    return;
+      return;
     }
+
+    const startDate = dayjs(date).format('DD/MM/YYYY');
+    const endDate = dayjs(date).add(quantity, 'days');
+    const dateRange = `${startDate} - ${dayjs(endDate).format('DD/MM/YYYY')}`;
 
     // Dodaj nową osobę do odpowiedniej tablicy w stanie pplJobs
     setPplJobs((prevJobs) => ({
@@ -48,16 +54,17 @@ function App () {
         {
           id: crypto.randomUUID(),
           osoba: person,
-          data: date
-        }
-      ]
+          data: dateRange,
+        },
+      ],
     }));
 
     // Zresetuj formularz
     setFormData({
       place: '',
       person: '',
-      date: ''
+      date: '',
+      quantity: '',
     });
 
     // Ukryj formularz
@@ -80,8 +87,8 @@ const deleteJob = (id, place) => {
 };
   
   useEffect( () => {
-    console.log(pplJobs)
-  }, [ pplJobs ] )
+    console.log( pplJobs )
+  }, [pplJobs] )
 
   return (
     <>
@@ -108,14 +115,11 @@ const deleteJob = (id, place) => {
         </aside>
         <section className='tabel-wrapper'>
           {miejsca.map(item => {
-            // Pobierz tablicę osób dla danego miejsca i posortuj ją
-            const sortedPeople = pplJobs[item.nazwa].sort((a, b) => new Date(b.data) - new Date(a.data));
-          
             return (
               <div className="col-wrapper" key={item.id}>
                 <h3 className="col-name">{item.nazwa}</h3>
                 <div className="column">
-                  {sortedPeople.map((person) => {
+                  {pplJobs[item.nazwa].map((person) => {
                     return (
                       <div className="job" key={person.id}>
                         <div>
@@ -166,6 +170,7 @@ const deleteJob = (id, place) => {
               value={formData.date}
               onChange={handleInputChange}
             />
+            <input type="text" className="days-inp" placeholder='Podaj ilość dni w przód' name="quantity" value={formData.quantity} onChange={handleInputChange}/>
             <div className="btn-box">
               <button type='submit' className='sub-btn'>Dodaj</button>
               <button type='button' className='close-btn' onClick={() => setFormVisibility(false)}>Anuluj</button>

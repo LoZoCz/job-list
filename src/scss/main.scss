@@ -13,8 +13,10 @@ body {
     font-family: system-ui, sans-serif;
     margin: 0;
     background-color: $prim-clr-1;
+    // background-image: url(https://images.unsplash.com/photo-1528353518104-dbd48bee7bc4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80);
+    // background-repeat: no-repeat;
+    // background-size: cover;
     color: $prim-clr-5;
-    padding: 1rem;
 }
 
 #root{
@@ -53,7 +55,7 @@ body {
         outline: none;
       }
 
-      .place-select, .ppl-select, .date-inp{
+      .place-select, .ppl-select, .date-inp, .days-inp{
         background-color: $prim-clr-4;
         border: none;
         outline: none;
@@ -93,6 +95,7 @@ body {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid $prim-clr-2;
+    padding-inline: 2rem;
 
     .add-btn{
         width: 3rem;
@@ -115,7 +118,7 @@ body {
 
 .main-cont{
     display: grid;
-    grid-template-columns: 20rem 1fr;
+    grid-template-columns: 15rem 1fr;
     gap: 1rem;
     padding: 1rem;
 
