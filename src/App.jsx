@@ -1,4 +1,4 @@
-import '../dist/index-e117c614.css'
+import './scss/main.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faXmark } from '@fortawesome/free-solid-svg-icons'
 import Data from "./json/data.json"
